@@ -21,7 +21,7 @@ function App() {
           Learn React
 
         </a>
-        <h1>{REACT_APP_NAME}</h1>
+        <h1>{process.env.REACT_APP_NAME}</h1>
       </header>
     </div>
   );

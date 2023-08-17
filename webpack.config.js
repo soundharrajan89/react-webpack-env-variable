@@ -36,8 +36,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      REACT_APP_NAME: JSON.stringify("LTTS Static variable"), // Expose config.js variables
+    // new webpack.DefinePlugin({
+    //   REACT_APP_NAME: JSON.stringify("LTTS Static variable"), // Expose config.js variables
+    // }),
+    new webpack.EnvironmentPlugin({
+      REACT_APP_NAME: 'static', // use 'development' unless process.env.NODE_ENV is defined
+      DEBUG: false,
     }),
     new InterpolateHtmlPlugin({
       PUBLIC_URL: '' // can modify `static` to another name or get it from `process`
